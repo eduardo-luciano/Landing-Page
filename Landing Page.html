@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduardo Soft 3 & EL | Suporte Técnico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        
+        /* Banner com imagem */
+        .hero-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('capa.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .tab-btn.active {
+            background-color: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navegação -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-700">Eduardo Soft 3 & EL</div>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#servicos" class="hover:text-blue-600">Serviços</a>
+                <a href="#loja" class="hover:text-blue-600">Produtos</a>
+                <a href="#contacto" class="hover:text-blue-600">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Banner -->
+    <header class="hero-banner text-white py-32 px-6 text-center">
+        <div class="container mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Eduardo Soft 3 & EL</h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200">Suporte técnico especializado e formação profissional de excelência.</p>
+            <div class="flex justify-center gap-4">
+                <a href="#loja" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-bold transition">Ver Produtos</a>
+                <a href="#servicos" class="bg-white text-gray-900 px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition">Nossos Serviços</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Secção de Serviços (Resumo) -->
+    <section id="servicos" class="py-16 container mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div class="p-6 bg-white rounded-xl shadow-sm border-b-4 border-blue-600">
+                <i class="fas fa-microchip text-4xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Hardware & Software</h3>
+                <p class="text-gray-600 text-sm">Reparação, manutenção e optimização de sistemas.</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-sm border-b-4 border-blue-600">
+                <i class="fas fa-bolt text-4xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Electricidade</h3>
+                <p class="text-gray-600 text-sm">Instalações e manutenção residencial e comercial.</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-sm border-b-4 border-blue-600">
+                <i class="fas fa-graduation-cap text-4xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Formação</h3>
+                <p class="text-gray-600 text-sm">Aulas de informática, programação e redes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secção de Produtos (Loja) -->
+    <section id="loja" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold">Catálogo de Produtos</h2>
+                <p class="text-gray-600">Selecione uma categoria para explorar</p>
+            </div>
+
+            <!-- Filtros (Abas) -->
+            <div class="flex flex-wrap justify-center gap-2 mb-12">
+                <button onclick="renderizar('hardware', this)" class="tab-btn active px-6 py-2 border-2 border-blue-600 rounded-full font-semibold transition">Serviços Técnicos</button>
+                <button onclick="renderizar('software', this)" class="tab-btn px-6 py-2 border-2 border-blue-600 rounded-full font-semibold transition">WebSites</button>
+                <button onclick="renderizar('redes', this)" class="tab-btn px-6 py-2 border-2 border-blue-600 rounded-full font-semibold transition">Softwares de Gestão</button>
+                <button onclick="renderizar('acessorios', this)" class="tab-btn px-6 py-2 border-2 border-blue-600 rounded-full font-semibold transition">Plantas Arquitetônicas</button>
+            </div>
+
+            <!-- Grid de Produtos -->
+            <div id="grid-produtos" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Os produtos serão inseridos aqui pelo JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12 border-b border-gray-800 pb-12">
+            <!-- Coluna 1: Sobre -->
+            <div>
+                <h3 class="text-2xl font-bold mb-4 text-blue-400">Eduardo Soft 3 & EL</h3>
+                <p class="text-gray-400 leading-relaxed">
+                    Especialistas em soluções tecnológicas integradas. Do suporte de hardware à formação profissional em TI.
+                </p>
+            </div>
+
+            <!-- Coluna 2: Contactos -->
+            <div>
+                <h4 class="text-lg font-bold mb-4">Contactos Diretos</h4>
+                <ul class="space-y-3 text-gray-400">
+                    <li><i class="fas fa-phone text-blue-400 mr-2"></i> +244 937 700 591</li>
+                    <li><i class="fas fa-envelope text-blue-400 mr-2"></i> eduardolupossa@gmail.com</li>
+                    <li><i class="fas fa-location-dot text-blue-400 mr-2"></i> Angola,Luanda,Mulenvos</li>
+                </ul>
+            </div>
+
+            <!-- Coluna 3: Redes Sociais -->
+            <div>
+                <h4 class="text-lg font-bold mb-4">Siga-nos</h4>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/eduardolucianolupossa.eduardo" class="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://github.com/eduardo-luciano/" class="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-gray-700 transition"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/eduardo-lupossa-1846a8397/" class="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-blue-700 transition"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center pt-8 text-gray-500 text-sm">
+            &copy; 2023 Eduardo Soft 3 & EL. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- Lógica de Funcionamento -->
+    <script>
+        // BASE DE DADOS DE PRODUTOS
+        const dados = {
+            hardware: [
+                { nome: "Diagnostico de PC", desc: "Serviço profissional de verificação e diagnóstico de computadores, identificando falhas de hardware e software, problemas de desempenho, vírus ou erros do sistema.🖥️🔧", preco: "17.000kz", img: "hs.jpg" },
+                { nome: "Instalação do Windows", desc: "Serviço profissional de instalação do Windows com configuração completa do sistema, drivers e programas essenciais.💻⚙️", preco: "23.000kz", img: "windows.png" },
+                { nome: "Ativação do Windows", desc: "Serviço de ativação do Windows para garantir que o sistema funcione de forma completa, segura e sem limitações. 💻🔑.", preco: "apartir 15.000kz", img: "windows.png" },
+                { nome: "Curso de Informática", desc: "Curso de Informática com explicações claras e práticas, do nível básico ao avançado.💻📘", preco: "apartir 10.000kz", img: "informatica.jpg " },
+                { nome: "Curso de Full-Stack Developer", desc: "Seja desenvolvedor um profissional cria softwares, website, aplicativos e sistemas de computador, escrevendo, testando e mantendo código.", preco: " apartir 35.000kz", img: "cdp.png " },
+                { nome: "Instalação de Redes", desc: "Instalação e configuração de redes domésticas e empresariais,Cablagem, Wi-Fi, segurança e troubleshooting", preco: "apartir 25.000kz", img: "rede.png" },
+                { nome: "Instalação Electrica", desc: "Instalações elétricas básicas.Manutenção e reparos.Suporte para pequenos projetos residenciais e comerciais.", preco: "apartir 75.000kz", img: "electrecista.PNG" },
+                { nome: "Desenhador Projetista", desc: "Plantas, maquetes digitais e modelações 3D.Acompanhamento e consultoria técnica.", preco: "apartir 30.000kz", img: "DP.jpg" }
+            ],
+            software: [
+                { nome: "E-commerce", desc: "Lojas virtuais completas e seguras para seu produto.", preco: "300.000kz", img: "e-commerce.jpg" },
+                { nome: "Blog", desc: "Sistemas de conteúdo dinâmicos e otimizados para SEO.", preco: "120.000kz", img: "blog.jpg" },
+                { nome: "Landing Page", desc: "Páginas focadas em conversão e vendas imediatas.", preco: "45.000kz", img: "lp.jpg" },
+                { nome: "WebSite", desc: "Desenvolvido para apresentar e vender produtos ou serviços.", preco: "125.000kz", img: "websites.jpg" }
+            ],
+            redes: [
+                { nome: "ERP Empresarial", desc: "Gestão completa de processos para sua empresa.", preco: "700.000kz", img: "ERP.png" },
+                { nome: "Gestão Financeira", desc: "Fluxo de caixa, contas a pagar e receber integrados.", preco: "175.000kz", img: "financeira.png" },
+                { nome: "CRM de Vendas", desc: "Organize seus leads e feche mais negócios.", preco: "250.000kz", img: "crm.png" },
+                { nome: "Controle de Estoque", desc: "Monitoramento preciso de entradas e saídas..", preco: "120.000kz", img: "stock.png" }
+            ],
+            acessorios: [
+                { nome: "Planta de Residêncial T3", desc: "Residência unifamiliar de piso, ou seja uma moradia para uma familia nuclear entre 2 a 3", preco: "216.000kz", img: "PA.png" },
+                { nome: "Planta de Residêncial T3", desc: "Residência unifamiliar de piso, ou seja uma moradia para uma familia nuclear entre 3 a 5.", preco: "142.000kz", img: "PA.png" },
+                { nome: "Planta de Residêncial T5", desc: "Residência unifamiliar de piso, ou seja uma moradia para uma familia nuclear entre 2 a 3", preco: "71.000kz", img: "PA.png" },
+                { nome: "Planta de Residêncial T6", desc: "Residência unifamiliar de um piso, ou seja uma moradia para uma familia nuclear entre 4 a 6", preco: "1.272.000kz", img: "PA.png" }
+            ]
+        };
+
+        // FUNÇÃO QUE TROCA OS PRODUTOS NO NAVEGADOR
+        function renderizar(categoria, botao) {
+            const grid = document.getElementById('grid-produtos');
+            const lista = dados[categoria];
+            
+            // 1. Limpa a grid
+            grid.innerHTML = "";
+
+            // 2. Gera os novos cards
+            lista.forEach(p => {
+                grid.innerHTML += `
+                    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 border border-gray-100 flex flex-col">
+                        <img src="${p.img}" class="w-full h-48 object-cover" alt="${p.nome}">
+                        <div class="p-5 flex-grow">
+                            <h4 class="font-bold text-lg mb-2">${p.nome}</h4>
+                            <p class="text-gray-500 text-sm mb-4 leading-relaxed">${p.desc}</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-2xl font-black text-blue-600">${p.preco}</span>
+                                <a href="https://wa.me/937700591?text=Desejo+solicitar+o+produto:+${p.nome}" 
+                                   class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-lg transition">
+                                   <i class="fas fa-cart-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // 3. Atualiza os botões (estética)
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            botao.classList.add('active');
+        }
+
+        // Iniciar com Hardware ao carregar a página
+        window.onload = () => {
+            renderizar('hardware', document.querySelector('.tab-btn'));
+        };
+    </script>
+</body>
+</html>
